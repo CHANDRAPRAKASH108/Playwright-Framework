@@ -12,16 +12,15 @@ import { config } from 'dotenv';
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
-if(process.env.ENVIRONMENT){
+if (process.env.ENVIRONMENT) {
   console.log('ENVIRONMENT', process.env.ENVIRONMENT);
   config({
     path: `.env.${process.env.ENVIRONMENT}`,
-    override: true
+    override: true,
   });
-}else{
+} else {
   config();
 }
-
 
 export default defineConfig({
   testDir: './tests',
