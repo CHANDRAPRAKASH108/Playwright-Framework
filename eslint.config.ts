@@ -1,5 +1,7 @@
 import tseslint from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
+import prettierPlugin from 'eslint-plugin-prettier';
+import prettierConfig from 'eslint-config-prettier';
 import { defineConfig } from 'eslint/config';
 
 export default defineConfig([
@@ -12,17 +14,14 @@ export default defineConfig([
     },
     plugins: {
       '@typescript-eslint': tseslint,
+      prettier: prettierPlugin,
     },
-    extends: [
-      'eslint:recommended',
-      'plugin:@typescript-eslint/recommended',
-      'plugin:prettier/recommended',
-    ],
     rules: {
       semi: 'error',
       'prefer-const': 'error',
       '@typescript-eslint/no-unused-vars': 'warn',
-      'prettier/prettier': 'error', // Ensure Prettier formatting is enforced
+      'prettier/prettier': 'error', // ✅ Correct way to enforce Prettier rules
     },
   },
+  prettierConfig, // ✅ Importing `eslint-config-prettier` separately
 ]);

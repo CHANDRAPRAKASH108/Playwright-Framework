@@ -5,7 +5,6 @@ const userName = Math.random().toString().substr(10);
 
 test('Register Test', async ({ page }) => {
   await page.goto(ENV.URL);
-  var a;
   await page.getByRole('link', { name: 'Register' }).click();
   await expect(
     page.getByRole('heading', { name: 'Signing up is easy!' }),
