@@ -1,4 +1,4 @@
-import { test } from '../fixture/customfixture';
+import { test } from '../fixture/customFixture';
 
 test('Register Test', async ({ registerPage }) => {
   await registerPage.visit();
